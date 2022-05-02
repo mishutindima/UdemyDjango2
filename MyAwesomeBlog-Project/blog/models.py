@@ -6,3 +6,6 @@ class Post(models.Model):
     date = models.DateField()
     text = models.CharField(max_length=1000)
     image = models.ImageField(upload_to="post_images/")
+
+    def get_summary(self):
+        return self.text[:70]
